@@ -1,6 +1,15 @@
 package htl.grieskirchen.androidstudio.kundenbersicht;
 
+import android.util.Log;
+
 import org.junit.Test;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +20,7 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void checkExceptionWithFile() {
+
     }
 }

@@ -7,6 +7,7 @@ import android.util.Log;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initUI() {
-        try (BufferedReader br = new BufferedReader(new FileReader(new File("customers_data.csv")))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("customers_data.csv")))) {
             String line = br.readLine();
             while(line!=null){
                 customers.add(new Customer(line));
@@ -33,9 +34,5 @@ public class MainActivity extends AppCompatActivity {
         }catch(Exception e){
             Log.e("initUI","Error at reading File");
         }
-
-        
     }
-
-
 }
